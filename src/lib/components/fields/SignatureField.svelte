@@ -9,7 +9,7 @@
 		{data.label_text}
 		{#if data.required}<span class="required">*</span>{/if}
 	</label>
-	<input id="field-{data.id}" type="text" class="field-input" value="" readonly />
+	<input id="field-{data.id}" type="text" class="field-input" value="" />
 </div>
 
 <style>

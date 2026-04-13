@@ -14,7 +14,6 @@
 		type="text"
 		class="field-input {data.field_size}"
 		value={data.default_text}
-		readonly
 	/>
 </div>
 

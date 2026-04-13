@@ -11,18 +11,18 @@
 	</label>
 	<div class="phone-fields">
 		{#if data.phone_format === 'international'}
-			<input id="field-{data.id}" type="text" class="phone-input phone-full" readonly />
+			<input id="field-{data.id}" type="text" class="phone-input phone-full" />
 		{:else}
 			<div class="phone-col">
-				<input type="text" class="phone-input" readonly />
+				<input type="text" class="phone-input" />
 				<span class="phone-sublabel">###</span>
 			</div>
 			<div class="phone-col">
-				<input type="text" class="phone-input" readonly />
+				<input type="text" class="phone-input" />
 				<span class="phone-sublabel">###</span>
 			</div>
 			<div class="phone-col phone-col-sm">
-				<input type="text" class="phone-input" readonly />
+				<input type="text" class="phone-input" />
 				<span class="phone-sublabel">###</span>
 			</div>
 		{/if}

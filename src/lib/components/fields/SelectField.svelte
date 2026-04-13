@@ -9,7 +9,7 @@
 		{data.label_text}
 		{#if data.required}<span class="required">*</span>{/if}
 	</label>
-	<select id="field-{data.id}" class="field-select {data.field_size}" disabled>
+	<select id="field-{data.id}" class="field-select {data.field_size}">
 		<option value="">--Select--</option>
 		{#each data.options as item}
 			<option value={item.text} selected={item.checked}>{item.text}</option>

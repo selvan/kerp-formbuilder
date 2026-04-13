@@ -12,21 +12,21 @@
 	<div class="name-fields">
 		{#if data.name_format === 'extended'}
 			<div class="name-col name-col-sm">
-				<input type="text" class="name-input" readonly />
+				<input type="text" class="name-input" />
 				<span class="name-sublabel">Title</span>
 			</div>
 		{/if}
 		<div class="name-col">
-			<input type="text" class="name-input" readonly />
+			<input type="text" class="name-input" />
 			<span class="name-sublabel">First</span>
 		</div>
 		<div class="name-col">
-			<input type="text" class="name-input" readonly />
+			<input type="text" class="name-input" />
 			<span class="name-sublabel">Last</span>
 		</div>
 		{#if data.name_format === 'extended'}
 			<div class="name-col name-col-sm">
-				<input type="text" class="name-input" readonly />
+				<input type="text" class="name-input" />
 				<span class="name-sublabel">Suffix</span>
 			</div>
 		{/if}

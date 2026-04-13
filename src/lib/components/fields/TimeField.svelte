@@ -11,19 +11,19 @@
 	</label>
 	<div class="time-fields">
 		<div class="time-col">
-			<input type="text" class="time-input" readonly />
+			<input type="text" class="time-input" />
 			<span class="time-sublabel">HH</span>
 		</div>
 		<div class="time-col">
-			<input type="text" class="time-input" readonly />
+			<input type="text" class="time-input" />
 			<span class="time-sublabel">MM</span>
 		</div>
 		<div class="time-col">
-			<input type="text" class="time-input" readonly />
+			<input type="text" class="time-input" />
 			<span class="time-sublabel">SS</span>
 		</div>
 		<div class="time-col">
-			<select class="time-select" disabled>
+			<select class="time-select">
 				<option value="am" selected>AM</option>
 				<option value="pm">PM</option>
 			</select>

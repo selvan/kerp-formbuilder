@@ -12,7 +12,7 @@
 	<div class="checkbox-group layout-{data.field_layout}">
 		{#each data.checkboxes as item}
 			<div class="checkbox-item">
-				<input type="checkbox" checked={item.checked} disabled />
+				<input type="checkbox" checked={item.checked} />
 				<label>{item.text}</label>
 			</div>
 		{/each}

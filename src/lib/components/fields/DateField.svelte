@@ -19,15 +19,15 @@
 	</label>
 	<div class="date-fields">
 		<div class="date-col">
-			<input type="text" class="date-input" readonly />
+			<input type="text" class="date-input" />
 			<span class="date-sublabel">{getDateParts()[0].toUpperCase()}</span>
 		</div>
 		<div class="date-col">
-			<input type="text" class="date-input" readonly />
+			<input type="text" class="date-input" />
 			<span class="date-sublabel">{getDateParts()[1].toUpperCase()}</span>
 		</div>
 		<div class="date-col date-col-wide">
-			<input type="text" class="date-input" readonly />
+			<input type="text" class="date-input" />
 			<span class="date-sublabel">YYYY</span>
 		</div>
 		<div class="date-icon">📅</div>

@@ -9,7 +9,7 @@
 		{data.label_text}
 		{#if data.required}<span class="required">*</span>{/if}
 	</label>
-	<textarea id="field-{data.id}" class="field-textarea {data.field_size}" readonly
+	<textarea id="field-{data.id}" class="field-textarea {data.field_size}"
 		>{data.default_text}</textarea
 	>
 </div>

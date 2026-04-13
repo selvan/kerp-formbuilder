@@ -12,33 +12,33 @@
 	<div class="address-fields">
 		<div class="address-row">
 			<div class="address-col full">
-				<input type="text" class="addr-input" readonly />
+				<input type="text" class="addr-input" />
 				<span class="addr-sublabel">Street Address</span>
 			</div>
 		</div>
 		<div class="address-row">
 			<div class="address-col full">
-				<input type="text" class="addr-input" readonly />
+				<input type="text" class="addr-input" />
 				<span class="addr-sublabel">Address Line 2</span>
 			</div>
 		</div>
 		<div class="address-row two-col">
 			<div class="address-col">
-				<input type="text" class="addr-input" readonly />
+				<input type="text" class="addr-input" />
 				<span class="addr-sublabel">City</span>
 			</div>
 			<div class="address-col">
-				<input type="text" class="addr-input" readonly />
+				<input type="text" class="addr-input" />
 				<span class="addr-sublabel">State / Province / Region</span>
 			</div>
 		</div>
 		<div class="address-row two-col">
 			<div class="address-col">
-				<input type="text" class="addr-input" readonly />
+				<input type="text" class="addr-input" />
 				<span class="addr-sublabel">Postal / Zip Code</span>
 			</div>
 			<div class="address-col">
-				<select class="addr-input" disabled>
+				<select class="addr-input">
 					<option>{data.country || ''}</option>
 				</select>
 				<span class="addr-sublabel">Country</span>

@@ -12,7 +12,7 @@
 	<div class="radio-group layout-{data.field_layout}">
 		{#each data.radios as item}
 			<div class="radio-item">
-				<input type="radio" name="radio-{data.id}" checked={item.checked} disabled />
+				<input type="radio" name="radio-{data.id}" checked={item.checked} />
 				<label>{item.text}</label>
 			</div>
 		{/each}
