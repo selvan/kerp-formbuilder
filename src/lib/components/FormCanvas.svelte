@@ -307,7 +307,7 @@
 	/* Field item */
 	.canvas-field-item {
 		display: flex;
-		align-items: stretch;
+		align-items: center;
 		gap: 0;
 		border: 1px solid var(--color-border, #334155);
 		border-radius: 0.75rem;
@@ -319,7 +319,7 @@
 			transform 0.15s;
 		cursor: pointer;
 		position: relative;
-		overflow: hidden;
+		overflow: visible;
 	}
 
 	.canvas-field-item:hover {
@@ -346,6 +346,7 @@
 		justify-content: center;
 		width: 28px;
 		flex-shrink: 0;
+		align-self: stretch;
 		cursor: grab;
 		color: var(--color-label, #94a3b8);
 		opacity: 0.3;
@@ -380,7 +381,7 @@
 	.field-content {
 		flex: 1;
 		min-width: 0;
-		padding: 0.85rem 1rem;
+		padding: 0.5rem 0.75rem;
 	}
 
 	/* Actions */
