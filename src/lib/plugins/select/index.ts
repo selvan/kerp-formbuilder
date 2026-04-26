@@ -10,8 +10,15 @@ export const selectPlugin: FieldPlugin<SelectFieldData> = {
 	icon: Icon as any,
 	preview: Preview as any,
 	settings: Settings as any,
-	defaultValue: () => {
-		// To be filled from old formBuilder
-		return { type: 'select', label_text: 'Dropdown', required: false } as any;
-	}
+	defaultValue: () => ({
+		type: 'select',
+		label_text: 'Dropdown',
+		required: false,
+		field_size: 'medium',
+		options: [
+			{ text: 'Option 1', checked: false },
+			{ text: 'Option 2', checked: false },
+			{ text: 'Option 3', checked: false }
+		]
+	})
 };

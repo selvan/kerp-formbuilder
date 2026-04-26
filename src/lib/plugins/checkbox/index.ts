@@ -10,8 +10,15 @@ export const checkboxPlugin: FieldPlugin<CheckboxFieldData> = {
 	icon: Icon as any,
 	preview: Preview as any,
 	settings: Settings as any,
-	defaultValue: () => {
-		// To be filled from old formBuilder
-		return { type: 'checkbox', label_text: 'Checkboxes', required: false } as any;
-	}
+	defaultValue: () => ({
+		type: 'checkbox',
+		label_text: 'Checkboxes',
+		required: false,
+		field_layout: 'one_column',
+		checkboxes: [
+			{ text: 'Option 1', checked: false },
+			{ text: 'Option 2', checked: false },
+			{ text: 'Option 3', checked: false }
+		]
+	})
 };

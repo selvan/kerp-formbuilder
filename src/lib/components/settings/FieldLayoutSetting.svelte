@@ -24,7 +24,7 @@
 	<div class="setting-control">
 		<select class="setting-select" {value} onchange={handleChange}>
 			{#each layouts as layout}
-				<option value={layout.val}>{layout.text}</option>
+				<option value={layout.val} selected={layout.val === value}>{layout.text}</option>
 			{/each}
 		</select>
 	</div>
