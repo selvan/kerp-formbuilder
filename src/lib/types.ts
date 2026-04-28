@@ -38,6 +38,7 @@ export interface FieldPlugin<T extends BaseFieldData = BaseFieldData> {
 	widgetName: string;
 	icon: Component;
 	preview: Component<{ data: T }>;
+	instance?: Component<{ data: T }>;
 	settings: Component<{ data: T; onupdate: (data: T) => void }>;
 	defaultValue: () => Omit<T, 'id'>;
 }

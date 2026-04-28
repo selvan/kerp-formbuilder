@@ -1,6 +1,7 @@
 import type { FieldPlugin } from '$lib/types';
 import Icon from './Icon.svelte';
 import Preview from './Preview.svelte';
+import Instance from './Instance.svelte';
 import Settings from './Settings.svelte';
 import type { EmailFieldData } from './types';
 
@@ -9,6 +10,7 @@ export const emailPlugin: FieldPlugin<EmailFieldData> = {
 	widgetName: 'Email',
 	icon: Icon as any,
 	preview: Preview as any,
+	instance: Instance as any,
 	settings: Settings as any,
 	defaultValue: () => {
 		// To be filled from old formBuilder

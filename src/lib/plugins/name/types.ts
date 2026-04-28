@@ -1,2 +1,2 @@
 import type { BaseFieldData, NameFormat } from '$lib/types';
-export interface NameFieldData extends BaseFieldData { type: 'name'; name_format: NameFormat; }
+export interface NameFieldData extends BaseFieldData { type: 'name'; name_format: NameFormat; value?: { title?: string; first?: string; last?: string; suffix?: string }; }

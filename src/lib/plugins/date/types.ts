@@ -1,2 +1,2 @@
 import type { BaseFieldData, DateFormat } from '$lib/types';
-export interface DateFieldData extends BaseFieldData { type: 'date'; date_format: DateFormat; }
+export interface DateFieldData extends BaseFieldData { type: 'date'; date_format: DateFormat; value?: { mm?: string; dd?: string; yyyy?: string }; }

@@ -1,2 +1,2 @@
 import type { BaseFieldData } from '$lib/types';
-export interface TimeFieldData extends BaseFieldData { type: 'time'; }
+export interface TimeFieldData extends BaseFieldData { type: 'time'; value?: { h?: string; m?: string; s?: string; ampm?: string }; }

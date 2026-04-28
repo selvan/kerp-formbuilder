@@ -1,2 +1,2 @@
 import type { BaseFieldData } from '$lib/types';
-export interface AddressFieldData extends BaseFieldData { type: 'address'; country: string; }
+export interface AddressFieldData extends BaseFieldData { type: 'address'; country: string; value?: { line1?: string; line2?: string; city?: string; state?: string; zip?: string; country?: string }; }

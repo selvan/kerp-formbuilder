@@ -1,2 +1,2 @@
 import type { BaseFieldData } from '$lib/types';
-export interface SignatureFieldData extends BaseFieldData { type: 'signature'; }
+export interface SignatureFieldData extends BaseFieldData { type: 'signature'; value?: string; }
