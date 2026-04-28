@@ -1,5 +1,6 @@
 import type { FieldPlugin } from '$lib/types';
 import Icon from './Icon.svelte';
+import Instance from './Instance.svelte';
 import Preview from './Preview.svelte';
 import Settings from './Settings.svelte';
 import type { SelectFieldData } from './types';
@@ -10,6 +11,7 @@ export const selectPlugin: FieldPlugin<SelectFieldData> = {
 	icon: Icon as any,
 	preview: Preview as any,
 	settings: Settings as any,
+	instance: Instance as any,
 	defaultValue: () => ({
 		type: 'select',
 		label_text: 'Dropdown',
