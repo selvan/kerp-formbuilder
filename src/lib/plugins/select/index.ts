@@ -12,6 +12,22 @@ export const selectPlugin: FieldPlugin<SelectFieldSpec> = {
 	preview: Preview as any,
 	settings: Settings as any,
 	instance: Instance as any,
+	validateField: (data: SelectFieldSpec) => {
+		const val = data.value?.toString().trim() || '';
+		if (data.required && val === '') {
+			data.error = 'This field is required. Please select a value.';
+			return false;
+		}
+		return true;
+	},
+	fieldInstanceValue: (data: SelectFieldSpec) => {
+		const val = data.value?.toString().trim() || '';
+		if (val !== '') {
+			const index = parseInt(val, 10);
+			return data.options[index]?.text || '';
+		}
+		return '';
+	},
 	defaultSpecData: () => ({
 		type: 'select',
 		label_text: 'Dropdown',

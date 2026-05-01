@@ -12,6 +12,17 @@ export const signaturePlugin: FieldPlugin<SignatureFieldSpec> = {
 	preview: Preview as any,
 	settings: Settings as any,
 	instance: Instance as any,
+	validateField: (data: SignatureFieldSpec) => {
+		const val = data.value?.toString().trim() || '';
+		if (data.required && (val === '' || val === '[]')) {
+			data.error = 'This field is required. Please enter a value.';
+			return false;
+		}
+		return true;
+	},
+	fieldInstanceValue: (data: SignatureFieldSpec) => {
+		return data.value?.toString().trim() || '';
+	},
 	defaultSpecData: () => {
 		// To be filled from old formBuilder
 		return { type: 'signature', label_text: 'Signature', required: false } as any;
