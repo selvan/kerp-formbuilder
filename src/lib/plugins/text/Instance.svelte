@@ -13,7 +13,7 @@
 		onchange: (value: any) => void;
 	} = $props();
 
-	let value = $state(userValue || spec.default_text || '');
+	let value = $derived(userValue || spec.default_text || '');
 
 	function handleInput(e: Event) {
 		const target = e.target as HTMLInputElement;

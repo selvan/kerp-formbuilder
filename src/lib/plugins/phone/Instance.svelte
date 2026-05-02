@@ -14,8 +14,8 @@
 	} = $props();
 
 	// International format uses a single string; domestic uses three parts
-	let international = $state(typeof userValue === 'object' ? userValue?.international || '' : '');
-	let parts = $state({
+	let international = $derived(typeof userValue === 'object' ? userValue?.international || '' : '');
+	let parts = $derived({
 		first: typeof userValue === 'object' ? userValue?.first || '' : '',
 		second: typeof userValue === 'object' ? userValue?.second || '' : '',
 		third: typeof userValue === 'object' ? userValue?.third || '' : ''

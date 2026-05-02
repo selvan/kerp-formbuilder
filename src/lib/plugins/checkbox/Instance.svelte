@@ -25,7 +25,7 @@
 		return spec.checkboxes[index]?.checked || false;
 	}
 
-	let selected = $state<Record<string, string>>(
+	let selected = $derived<Record<string, string>>(
 		Object.fromEntries(
 			spec.checkboxes.map((_, index) => [
 				String(index),

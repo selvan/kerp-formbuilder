@@ -13,7 +13,7 @@
 		onchange: (value: any) => void;
 	} = $props();
 
-	let fileName = $state(
+	let fileName = $derived(
 		userValue instanceof File
 			? userValue.name
 			: typeof userValue === 'object'

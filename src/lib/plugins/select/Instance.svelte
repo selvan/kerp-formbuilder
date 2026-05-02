@@ -20,7 +20,7 @@
 		return checkedIndex >= 0 ? String(checkedIndex) : '';
 	}
 
-	let value = $state(defaultValue());
+	let value = $derived(defaultValue());
 
 	function handleChange(e: Event) {
 		const target = e.target as HTMLSelectElement;

@@ -18,7 +18,7 @@
 	} = $props();
 
 	let canvas: HTMLCanvasElement;
-	let value = $state(typeof userValue === 'string' ? userValue : JSON.stringify(userValue || []));
+	let value = $derived(typeof userValue === 'string' ? userValue : JSON.stringify(userValue || []));
 	let strokes: Stroke[] = [];
 	let currentStroke: Stroke | null = null;
 
