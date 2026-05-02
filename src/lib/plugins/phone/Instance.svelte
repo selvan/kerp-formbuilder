@@ -2,12 +2,12 @@
 	import type { PhoneFieldSpec } from './types';
 
 	let {
-		data,
+		spec,
 		userValue,
 		error = '',
 		onchange
 	}: {
-		data: PhoneFieldSpec;
+		spec: PhoneFieldSpec;
 		userValue?: Record<string, string> | string;
 		error?: string;
 		onchange: (value: any) => void;
@@ -38,11 +38,11 @@
 	{#if error}
 		<p class="error-message">{error}</p>
 	{/if}
-	{#if data.phone_format === 'international'}
+	{#if spec.phone_format === 'international'}
 		<input
 			type="text"
 			class="phone-input medium"
-			name="field{data.id}[international]"
+			name="field{spec.id}[international]"
 			value={international}
 			oninput={handleInternational}
 		/>
@@ -52,7 +52,7 @@
 				<input
 					type="text"
 					class="phone-input"
-					name="field{data.id}[first]"
+					name="field{spec.id}[first]"
 					value={parts.first}
 					oninput={(e) => handlePart('first', e)}
 				/>
@@ -62,7 +62,7 @@
 				<input
 					type="text"
 					class="phone-input"
-					name="field{data.id}[second]"
+					name="field{spec.id}[second]"
 					value={parts.second}
 					oninput={(e) => handlePart('second', e)}
 				/>
@@ -72,7 +72,7 @@
 				<input
 					type="text"
 					class="phone-input"
-					name="field{data.id}[third]"
+					name="field{spec.id}[third]"
 					value={parts.third}
 					oninput={(e) => handlePart('third', e)}
 				/>

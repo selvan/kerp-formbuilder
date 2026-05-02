@@ -2,18 +2,18 @@
 	import type { TextareaFieldSpec } from './types';
 
 	let {
-		data,
+		spec,
 		userValue = '',
 		error = '',
 		onchange
 	}: {
-		data: TextareaFieldSpec;
+		spec: TextareaFieldSpec;
 		userValue?: string;
 		error?: string;
 		onchange: (value: any) => void;
 	} = $props();
 
-	let value = $state(userValue || data.default_text || '');
+	let value = $state(userValue || spec.default_text || '');
 
 	function handleInput(e: Event) {
 		const target = e.target as HTMLTextAreaElement;
@@ -26,7 +26,7 @@
 	{#if error}
 		<p class="error-message">{error}</p>
 	{/if}
-	<textarea class="field-input {data.field_size}" name="field{data.id}" oninput={handleInput}
+	<textarea class="field-input {spec.field_size}" name="field{spec.id}" oninput={handleInput}
 		>{value}</textarea
 	>
 </div>

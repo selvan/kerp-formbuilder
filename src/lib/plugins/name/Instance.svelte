@@ -2,18 +2,18 @@
 	import type { NameFieldSpec } from './types';
 
 	let {
-		data,
+		spec,
 		userValue,
 		error = '',
 		onchange
 	}: {
-		data: NameFieldSpec;
+		spec: NameFieldSpec;
 		userValue?: Record<string, string>;
 		error?: string;
 		onchange: (value: any) => void;
 	} = $props();
 
-	let fields = $state({
+	let fields = $derived({
 		title: userValue?.title || '',
 		first: userValue?.first || '',
 		last: userValue?.last || '',
@@ -32,12 +32,12 @@
 		<p class="error-message">{error}</p>
 	{/if}
 	<div class="name-fields">
-		{#if data.name_format === 'extended'}
+		{#if spec.name_format === 'extended'}
 			<div class="name-col small">
 				<input
 					type="text"
 					class="name-input"
-					name="field{data.id}[title]"
+					name="field{spec.id}[title]"
 					value={fields.title}
 					oninput={(e) => handleInput('title', e)}
 				/>
@@ -48,7 +48,7 @@
 			<input
 				type="text"
 				class="name-input"
-				name="field{data.id}[first]"
+				name="field{spec.id}[first]"
 				value={fields.first}
 				oninput={(e) => handleInput('first', e)}
 			/>
@@ -58,18 +58,18 @@
 			<input
 				type="text"
 				class="name-input"
-				name="field{data.id}[last]"
+				name="field{spec.id}[last]"
 				value={fields.last}
 				oninput={(e) => handleInput('last', e)}
 			/>
 			<span class="name-sublabel">Last</span>
 		</div>
-		{#if data.name_format === 'extended'}
+		{#if spec.name_format === 'extended'}
 			<div class="name-col small">
 				<input
 					type="text"
 					class="name-input"
-					name="field{data.id}[suffix]"
+					name="field{spec.id}[suffix]"
 					value={fields.suffix}
 					oninput={(e) => handleInput('suffix', e)}
 				/>

@@ -2,12 +2,12 @@
 	import type { CheckboxFieldSpec } from './types';
 
 	let {
-		data,
+		spec,
 		userValue,
 		error = '',
 		onchange
 	}: {
-		data: CheckboxFieldSpec;
+		spec: CheckboxFieldSpec;
 		userValue?: Record<string, string> | string[] | number[];
 		error?: string;
 		onchange: (value: any) => void;
@@ -22,12 +22,12 @@
 			return userValue[String(index)] !== undefined && userValue[String(index)] !== '-1';
 		}
 
-		return data.checkboxes[index]?.checked || false;
+		return spec.checkboxes[index]?.checked || false;
 	}
 
 	let selected = $state<Record<string, string>>(
 		Object.fromEntries(
-			data.checkboxes.map((_, index) => [
+			spec.checkboxes.map((_, index) => [
 				String(index),
 				checkedFromUserValue(index) ? String(index) : '-1'
 			])
@@ -45,14 +45,14 @@
 	{#if error}
 		<p class="error-message">{error}</p>
 	{/if}
-	<div class="checkbox-group layout-{data.field_layout}">
-		{#each data.checkboxes as item, index}
+	<div class="checkbox-group layout-{spec.field_layout}">
+		{#each spec.checkboxes as item, index}
 			<label class="checkbox-item">
-				<input type="hidden" name="field{data.id}[{index}]" value="-1" />
+				<input type="hidden" name="field{spec.id}[{index}]" value="-1" />
 				<input
 					type="checkbox"
 					class="choice-input"
-					name="field{data.id}[{index}]"
+					name="field{spec.id}[{index}]"
 					value={index}
 					checked={selected[String(index)] !== '-1'}
 					onchange={(e) => handleChange(index, e)}

@@ -2,12 +2,12 @@
 	import type { RadioFieldSpec } from './types';
 
 	let {
-		data,
+		spec,
 		userValue,
 		error = '',
 		onchange
 	}: {
-		data: RadioFieldSpec;
+		spec: RadioFieldSpec;
 		userValue?: string | number;
 		error?: string;
 		onchange: (value: any) => void;
@@ -16,7 +16,7 @@
 	function defaultValue(): string {
 		if (userValue !== undefined && userValue !== null) return String(userValue);
 
-		const checkedIndex = data.radios.findIndex((item) => item.checked);
+		const checkedIndex = spec.radios.findIndex((item) => item.checked);
 		return checkedIndex >= 0 ? String(checkedIndex) : '';
 	}
 
@@ -33,13 +33,13 @@
 	{#if error}
 		<p class="error-message">{error}</p>
 	{/if}
-	<div class="radio-group layout-{data.field_layout}">
-		{#each data.radios as item, index}
+	<div class="radio-group layout-{spec.field_layout}">
+		{#each spec.radios as item, index}
 			<label class="radio-item">
 				<input
 					type="radio"
 					class="choice-input"
-					name="field{data.id}"
+					name="field{spec.id}"
 					value={index}
 					checked={value === String(index)}
 					onchange={handleChange}

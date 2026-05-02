@@ -6,12 +6,12 @@
 	type Stroke = Point[];
 
 	let {
-		data,
+		spec,
 		userValue = '',
 		error = '',
 		onchange
 	}: {
-		data: SignatureFieldSpec;
+		spec: SignatureFieldSpec;
 		userValue?: string | Stroke[];
 		error?: string;
 		onchange: (value: any) => void;
@@ -141,7 +141,7 @@
 			onpointercancel={handlePointerUp}
 		></canvas>
 	</div>
-	<input type="hidden" name="field{data.id}" {value} />
+	<input type="hidden" name="field{spec.id}" {value} />
 	<button type="button" class="clear-signature" onclick={clearSignature}>clear signature</button>
 </div>
 

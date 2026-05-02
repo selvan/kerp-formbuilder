@@ -3,24 +3,24 @@
 	import { countries } from '$lib/data/countries';
 
 	let {
-		data,
+		spec,
 		userValue,
 		error = '',
 		onchange
 	}: {
-		data: AddressFieldSpec;
+		spec: AddressFieldSpec;
 		userValue?: Record<string, string>;
 		error?: string;
 		onchange: (value: any) => void;
 	} = $props();
 
-	let fields = $state({
+	let fields = $derived({
 		line1: userValue?.line1 || '',
 		line2: userValue?.line2 || '',
 		city: userValue?.city || '',
 		state: userValue?.state || '',
 		zip: userValue?.zip || '',
-		country: userValue?.country || data.country || ''
+		country: userValue?.country || spec.country || ''
 	});
 
 	function handleInput(field: string, e: Event) {
@@ -40,7 +40,7 @@
 				<input
 					type="text"
 					class="addr-input"
-					name="field{data.id}[line1]"
+					name="field{spec.id}[line1]"
 					value={fields.line1}
 					oninput={(e) => handleInput('line1', e)}
 				/>
@@ -52,7 +52,7 @@
 				<input
 					type="text"
 					class="addr-input"
-					name="field{data.id}[line2]"
+					name="field{spec.id}[line2]"
 					value={fields.line2}
 					oninput={(e) => handleInput('line2', e)}
 				/>
@@ -64,7 +64,7 @@
 				<input
 					type="text"
 					class="addr-input"
-					name="field{data.id}[city]"
+					name="field{spec.id}[city]"
 					value={fields.city}
 					oninput={(e) => handleInput('city', e)}
 				/>
@@ -74,7 +74,7 @@
 				<input
 					type="text"
 					class="addr-input"
-					name="field{data.id}[state]"
+					name="field{spec.id}[state]"
 					value={fields.state}
 					oninput={(e) => handleInput('state', e)}
 				/>
@@ -86,7 +86,7 @@
 				<input
 					type="text"
 					class="addr-input"
-					name="field{data.id}[zip]"
+					name="field{spec.id}[zip]"
 					value={fields.zip}
 					oninput={(e) => handleInput('zip', e)}
 				/>
@@ -95,7 +95,7 @@
 			<div class="address-col">
 				<select
 					class="addr-input"
-					name="field{data.id}[country]"
+					name="field{spec.id}[country]"
 					onchange={(e) => handleInput('country', e)}
 				>
 					<option value="">--Select--</option>

@@ -2,12 +2,12 @@
 	import type { SelectFieldSpec } from './types';
 
 	let {
-		data,
+		spec,
 		userValue,
 		error = '',
 		onchange
 	}: {
-		data: SelectFieldSpec;
+		spec: SelectFieldSpec;
 		userValue?: string | number;
 		error?: string;
 		onchange: (value: any) => void;
@@ -16,7 +16,7 @@
 	function defaultValue(): string {
 		if (userValue !== undefined && userValue !== null) return String(userValue);
 
-		const checkedIndex = data.options.findIndex((item) => item.checked);
+		const checkedIndex = spec.options.findIndex((item) => item.checked);
 		return checkedIndex >= 0 ? String(checkedIndex) : '';
 	}
 
@@ -34,13 +34,13 @@
 		<p class="error-message">{error}</p>
 	{/if}
 	<select
-		class="field-select {data.field_size}"
-		name="field{data.id}"
+		class="field-select {spec.field_size}"
+		name="field{spec.id}"
 		{value}
 		onchange={handleChange}
 	>
 		<option value="">--Select--</option>
-		{#each data.options as item, index}
+		{#each spec.options as item, index}
 			<option value={index}>{item.text}</option>
 		{/each}
 	</select>

@@ -2,23 +2,23 @@
 	import type { DateFieldSpec } from './types';
 
 	let {
-		data,
+		spec,
 		userValue,
 		error = '',
 		onchange
 	}: {
-		data: DateFieldSpec;
+		spec: DateFieldSpec;
 		userValue?: Record<string, string>;
 		error?: string;
 		onchange: (value: any) => void;
 	} = $props();
 
 	// date_format is 'mm/dd/yyyy' or 'dd/mm/yyyy'
-	const formatParts = data.date_format.split('/');
+	const formatParts = spec.date_format.split('/');
 	const first = formatParts[0]; // 'mm' or 'dd'
 	const second = formatParts[1]; // 'dd' or 'mm'
 
-	let fields = $state({
+	let fields = $derived({
 		[first]: userValue?.[first] || '',
 		[second]: userValue?.[second] || '',
 		yyyy: userValue?.yyyy || ''
@@ -40,7 +40,7 @@
 			<input
 				type="text"
 				class="date-input"
-				name="field{data.id}[{first}]"
+				name="field{spec.id}[{first}]"
 				value={fields[first]}
 				oninput={(e) => handleInput(first, e)}
 			/>
@@ -50,7 +50,7 @@
 			<input
 				type="text"
 				class="date-input"
-				name="field{data.id}[{second}]"
+				name="field{spec.id}[{second}]"
 				value={fields[second]}
 				oninput={(e) => handleInput(second, e)}
 			/>
@@ -60,7 +60,7 @@
 			<input
 				type="text"
 				class="date-input"
-				name="field{data.id}[yyyy]"
+				name="field{spec.id}[yyyy]"
 				value={fields.yyyy}
 				oninput={(e) => handleInput('yyyy', e)}
 			/>

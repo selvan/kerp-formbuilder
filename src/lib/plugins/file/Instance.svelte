@@ -2,12 +2,12 @@
 	import type { FileFieldSpec } from './types';
 
 	let {
-		data,
+		spec,
 		userValue,
 		error = '',
 		onchange
 	}: {
-		data: FileFieldSpec;
+		spec: FileFieldSpec;
 		userValue?: File | { file_name?: string } | string;
 		error?: string;
 		onchange: (value: any) => void;
@@ -34,10 +34,10 @@
 		<p class="error-message">{error}</p>
 	{/if}
 	<input
-		id="field{data.id}"
+		id="field{spec.id}"
 		type="file"
 		class="field-file"
-		name="field{data.id}"
+		name="field{spec.id}"
 		onchange={handleChange}
 	/>
 	{#if fileName}

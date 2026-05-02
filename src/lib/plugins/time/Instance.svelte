@@ -2,18 +2,18 @@
 	import type { TimeFieldSpec } from './types';
 
 	let {
-		data,
+		spec,
 		userValue,
 		error = '',
 		onchange
 	}: {
-		data: TimeFieldSpec;
+		spec: TimeFieldSpec;
 		userValue?: Record<string, string>;
 		error?: string;
 		onchange: (value: any) => void;
 	} = $props();
 
-	let fields = $state({
+	let fields = $derived({
 		h: userValue?.h || '',
 		m: userValue?.m || '',
 		s: userValue?.s || '',
@@ -36,7 +36,7 @@
 			<input
 				type="text"
 				class="time-input"
-				name="field{data.id}[h]"
+				name="field{spec.id}[h]"
 				value={fields.h}
 				oninput={(e) => handleInput('h', e)}
 			/>
@@ -46,7 +46,7 @@
 			<input
 				type="text"
 				class="time-input"
-				name="field{data.id}[m]"
+				name="field{spec.id}[m]"
 				value={fields.m}
 				oninput={(e) => handleInput('m', e)}
 			/>
@@ -56,7 +56,7 @@
 			<input
 				type="text"
 				class="time-input"
-				name="field{data.id}[s]"
+				name="field{spec.id}[s]"
 				value={fields.s}
 				oninput={(e) => handleInput('s', e)}
 			/>
@@ -65,7 +65,7 @@
 		<div class="time-col wider">
 			<select
 				class="time-input"
-				name="field{data.id}[ampm]"
+				name="field{spec.id}[ampm]"
 				onchange={(e) => handleInput('ampm', e)}
 			>
 				<option value="am" selected={fields.ampm === 'am'}>AM</option>
